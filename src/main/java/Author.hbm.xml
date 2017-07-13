@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-07-13 20:09:57 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+	<class name="pl.sda.exercise.hibernate.model.Author" table="AUTHOR">
+		<id name="authorId" type="java.lang.Integer">
+			<column name="Id" />
+			<generator class="native" />
+		</id>
+		<property name="firstName" type="java.lang.String">
+			<column name="first_name" />
+		</property>
+		<property name="lastName" type="java.lang.String">
+			<column name="last_name" />
+		</property>
+		<set name="books">
+			<key column="author_id"></key>
+			<one-to-many class="pl.sda.exercise.hibernate.model.Book" />
+		</set>
+	</class>
+</hibernate-mapping>
