@@ -1,10 +1,24 @@
 package pl.sda.exercise.hibernate.model;
 
+import java.util.Collection;
+import java.util.Set;
+
 public class Book {
 
 	private String title;
 	private Integer id;
 	private Author author; 
+	private Set<Category> categories;
+
+	
+
+	public Set<Category> getCategories() {
+		return categories;
+	}
+
+	public void setCategories(Set<Category> categories) {
+		this.categories = categories;
+	}
 
 	public Integer getId() {
 		return id;
@@ -34,5 +48,7 @@ public class Book {
 	public void setAuthor(Author author) {
 		this.author = author;
 	}
+
+	
 
 }
